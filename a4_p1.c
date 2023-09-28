@@ -6,11 +6,11 @@ rluitel@jacobs-university.de
 */
 
 #include <stdio.h>
-
+#include <math.h>
 int main()
 {
     double lower, step, upper;
-    double pie = 3.141592667; // value of pie is causing errors
+    double pie = M_PI; // M_PI imported from math.h library
 
     printf("Enter lower limit: ");
     scanf("%lf", &lower);
