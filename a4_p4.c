@@ -8,11 +8,13 @@ rluitel@jacobs-university.de
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
+// function prototype(s)
 int count_consonants(char str[]);
 
-int count_consonants(char str[])
+int count_consonants(char str[]) // counts and returns the total number of consonants in str[]
 {
-    int vowels[] = {1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0};
+    int vowels[] = {1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}; // positions of a,e,i,o,u are 1
     int cons_count = 0;
 
     int charnum;
@@ -22,7 +24,7 @@ int count_consonants(char str[])
 
         if (charnum >= 0 && charnum < 26)
         {
-            if (vowels[charnum] == 0)
+            if (vowels[charnum] == 0) // accessing an array element takes bigO(1) time
                 ++cons_count;
         }
     }
@@ -32,6 +34,8 @@ int count_consonants(char str[])
 int main()
 {
     char line[1000];
+
+    // take keyboard input
     fgets(line, sizeof(line), stdin);
 
     while (line[0] != '\n')

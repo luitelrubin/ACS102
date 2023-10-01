@@ -10,12 +10,14 @@ rluitel@jacobs-university.de
 #include <string.h>
 #include <ctype.h>
 
+// function prototype(s)
 int count_insensitive(char *str, char c);
 
+// returns the number of times character 'c' occurs in string 'str'
 int count_insensitive(char *str, char c)
 {
     int count = 0;
-    c = tolower(c);
+    c = tolower(c); // converts character to lower case, tolower() imported from ctype.h
     for (int i = 0; i < strlen(str); i++)
     {
         if (c == tolower(str[i]))
@@ -39,7 +41,7 @@ int main()
     // allocate memory for another string of the correct size
     char *strnew = (char *)malloc(sizeof(char) * strlen(str));
 
-    // copy the original string into the new string
+    // copy the first string into a new string
     strcpy(strnew, str);
 
     // deallocate the memory occupied by the first string
@@ -53,7 +55,7 @@ int main()
         printf("The character '%c' occurs %d times.\n", chlist[i], count_insensitive(strnew, chlist[i]));
     }
 
-    // deallocate the memory occupied by the second string
+    // release the memory occupied by the second string
     free(strnew);
     return 0;
 }

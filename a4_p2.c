@@ -11,13 +11,13 @@ int main()
 {
     char line[50];
 
-    printf("Enter a string: ");
+    // printf("Enter a string: ");
     fgets(line, sizeof(line), stdin);
     line[strlen(line) - 1] = '\0'; // remove trailing newline
 
-    int i;
-    for (i = 0; i < (int)strlen(line); i++)
+    for (int i = 0; i < (int)strlen(line); i++)
     {
+        // print a space before the character if it's position in the string is odd
         i % 2 == 0 ? printf("%c\n", line[i]) : printf(" %c\n", line[i]);
     }
     return 0;

@@ -7,8 +7,11 @@ rluitel@jacobs-university.de
 
 #include <stdio.h>
 #include <stdlib.h>
-
+// function prototype(s)
 int prod_min_max(int arr[], int n);
+
+// returns the product of min element and max element in array arr[].
+// n represents size of the array
 int prod_min_max(int arr[], int n)
 {
     int min = arr[0];
@@ -41,13 +44,13 @@ int main()
     }
 
     int *arr;
-    arr = (int *)malloc(sizeof(int) * n);
+    arr = (int *)malloc(sizeof(int) * n); // allocate memory to accomodate n integers
 
     printf("Enter %d integers to populate your array: ", n);
     for (int i = 0; i < n; i++)
-        scanf("%d", arr + i);
+        scanf("%d", arr + i); // take integer input from the keyboard
 
     printf("Product of min val and max val is\t: %d", prod_min_max(arr, n));
-    free(arr);
+    free(arr); // release the allocated memory
     return 0;
 }
