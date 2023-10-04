@@ -17,7 +17,7 @@ void display(float array[], int empty_pos);
 
 float geometric_mean(float arr[], int num) // returns geometric mean of the array elements
 {
-    // 1 is a neutral value for multiplicaiton
+    // 1 is a neutral value for multiplication
     float result = 1;
 
     for (int i = 0; i < num; i++)
@@ -26,7 +26,7 @@ float geometric_mean(float arr[], int num) // returns geometric mean of the arra
     }
 
     // double pow(double, double) imported from math.h
-    result = (float)pow((double)result, (double)1 / num); // result ^ (1/num)
+    result = (float)pow(result, (double)1 / num); // result ^ (1/num)
     return result;
 }
 
@@ -79,8 +79,11 @@ int main()
     float member;
     int empty_pos = 0;
 
+    // take keyboard input
     printf("Enter a float value: ");
     scanf("%f", &member);
+
+    //
     while (member >= 0 && empty_pos < 15)
     {
         array[empty_pos] = member;
